@@ -11,4 +11,4 @@ The tex file is written with pytex so it's a bit annoying to compile. That is wh
 The 3D rotation formula is similar to that used in [Ravi Ramamoorthi's course](https://www.youtube.com/watch?v=LazSPnaoJ_Q&t=482s) (matrix part). Also [Mathomas videos](https://youtu.be/q-ESzg03mQc) are a nice resource on this topic.
 
 
-![axis_angle](https://user-images.githubusercontent.com/22398803/148267725-53009af4-a74e-4fa6-bff6-2b83c50a3a4c.png)
+![axis_angle](https://user-images.githubusercontent.com/22398803/148301326-be78a794-4dda-4fac-b716-a70d683ccbad.png)
