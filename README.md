@@ -14,6 +14,8 @@ The 3D rotation formula is similar to that used in [Ravi Ramamoorthi's course](h
 An implementation is python and numpy could look like:
 
     import numpy as np
+    # input: normalized rotation axis vector n, angle theta (radians)
+    # output: 3x3 rotation matrix
     def axis_angle_rotation(n, theta):
         def crossProdMat(x, y, z):
             return np.array( [ [0, -z, y], [z, 0, -x], [-y, x, 0] ] )
