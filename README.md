@@ -13,3 +13,13 @@ The 3D rotation formula is similar to that used in [Ravi Ramamoorthi's course](h
 
 ![axis_angle](https://user-images.githubusercontent.com/22398803/148421252-5e125662-9c64-4ca9-9e4e-8e9a6f7e8baf.png)
 
+An implementation is python could look like:
+
+    def axis_angle_rotation(n, theta):
+        def Kn(x, y, z):
+            return np.array( [ [0, -z, y], [z, 0, -x], [-y, x, 0] ] )
+
+    P = np.outer(n, n)
+    I = np.identity(3)
+    K = Kn(*n)
+    return P + np.cos(theta) * (I - P) + np.sin(theta) * K
