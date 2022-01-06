@@ -10,6 +10,7 @@ The tex file is written with pytex so it's a bit annoying to compile. That is wh
 
 The 3D rotation formula is similar to that used in [Ravi Ramamoorthi's course](https://www.youtube.com/watch?v=LazSPnaoJ_Q&t=482s) (matrix part). Also [Mathomas videos](https://youtu.be/q-ESzg03mQc) are a nice resource on this topic.
 
+## possible implementation
 An implementation is python could look like:
 
     def axis_angle_rotation(n, theta):
@@ -21,4 +22,5 @@ An implementation is python could look like:
     K = crossProdMat(*n)
     return P + np.cos(theta) * (I - P) + np.sin(theta) * K
 
+## Derivation
 ![axis_angle](https://user-images.githubusercontent.com/22398803/148421252-5e125662-9c64-4ca9-9e4e-8e9a6f7e8baf.png)
