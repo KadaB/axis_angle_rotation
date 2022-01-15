@@ -210,7 +210,7 @@ Circle on plane: $P(\cos(\theta), \sin(\theta)) =  \vec{c} + \cos(\theta) \, \ve
 %    \draw[dashed] (0, .6, 0) node {};
 %    \draw[dashed] (0, .6, 0)node {};
 
-    \draw (0.15, \hgt ,-0.05) node []{$\alpha$};
+    \draw (0.15, \hgt ,-0.05) node []{$\theta$};
 \end{tikzpicture}
 
 \items{
@@ -304,7 +304,7 @@ $\gleichung{
 $\gleichung{
     \vec{v'}
       & = \vec{v}_\parallel + \cos(\theta) \, \vec{v}_\perp + \sin(\theta) \, \hat{n} \times \vec{v} &|& \text{def. } \vec{v}_\parallel, \vec{v}_\perp\\
-      & =  (\vec{v} \bullet \hat{n} ) \hat{n} + \cos(\theta) \left(\vec{v} - ( \vec{v} \bullet \hat{n} ) \hat{n} \right) + \sin(\theta) \, \hat{n} \times \vec{v} &|& (\vec{n} \bullet \hat{n}) \hat{n} = (\hat{n}^T \hat{v})\hat{n} = \hat{n}\hat{n}^T \vec{v}\\
+      & =  (\vec{v} \bullet \hat{n} ) \hat{n} + \cos(\theta) \left(\vec{v} - ( \vec{v} \bullet \hat{n} ) \hat{n} \right) + \sin(\theta) \, \hat{n} \times \vec{v} &|& (\vec{v} \bullet \hat{n}) \hat{n} = (\hat{n}^T \hat{v})\hat{n} = \hat{n}\hat{n}^T \vec{v}\\
       & =  \hat{n}\hat{n}^{T} \vec{v} + \cos(\theta) \left(\vec{v} - \hat{n}\hat{n}^{T} \vec{v} \right) + \sin(\theta) \, [\hat{n}]_{\times} \vec{v} &|& \mathbf{P} = \hat{n}\hat{n}^T, \mathbf{K} = [\hat{n}]_\times, \mathbf{I} \, \vec{v} = \vec{v} \\
       & =  \mathbf{P} \, \vec{v} + \cos(\theta) \left(\mathbf{I} \, \vec{v} - \mathbf{P} \, \vec{v} \right) + \sin(\theta) \, \mathbf{K} \, \vec{v} &|& \text{factorize } \vec{v}: \mathbf{A} \vec{v} + \mathbf{B} \vec{v} = [ \mathbf{A} + \mathbf{B} ] \vec{v} \\
       & =  [\, \mathbf{P} + \cos(\theta) \left(\mathbf{I} - \mathbf{P} \right) + \sin(\theta) \, \mathbf{K} \, ] \, \vec{v} \\
@@ -315,7 +315,9 @@ $\gleichung{
 
 \item Matrix for rotating arbitrary vector around axis $\hat{n}$ with angle $\theta$: \\ 
 $\mathbf{R}(\hat{n}, \theta) =  \mathbf{P} + \cos(\theta) \left(\mathbf{I} - \mathbf{P} \right) + \sin(\theta) \, \mathbf{K}$ \\
-$\mathbf{R}(\hat{n}, \theta) =  \mathbf{P} + \cos(\theta) \left( \mymat{ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 } - \mymat { n_x^2 & n_x n_y & n_x n_z  \\ n_x n_y & n_y^2 & n_y n_z  \\ n_x n_z & n_y n_z & n_z^2  \\ } \right) + \sin(\theta) \, \mymat{ 0 & -n_z & n_y \\ n_z & 0 & -n_x \\ -n_y & n_x & 0 } $
+
+$\mathbf{R}(\hat{n}, \theta) =  \mymat { n_x^2 & n_x n_y & n_x n_z  \\ n_x n_y & n_y^2 & n_y n_z  \\ n_x n_z & n_y n_z & n_z^2  \\ } + \cos(\theta) \left( \mymat{ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 } - \mymat { n_x^2 & n_x n_y & n_x n_z  \\ n_x n_y & n_y^2 & n_y n_z  \\ n_x n_z & n_y n_z & n_z^2  \\ } \right) + \sin(\theta) \, \mymat{ 0 & -n_z & n_y \\ n_z & 0 & -n_x \\ -n_y & n_x & 0 } $
+
 }
 
 \end{document}
