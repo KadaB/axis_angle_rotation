@@ -26,6 +26,5 @@ An implementation is python and numpy could look like:
         return P + np.cos(theta) * (I - P) + np.sin(theta) * K
 
 ## Derivation
-![axis_angle](https://user-images.githubusercontent.com/22398803/148421252-5e125662-9c64-4ca9-9e4e-8e9a6f7e8baf.png)
 ![axis_angle](https://user-images.githubusercontent.com/22398803/149604737-1b46491a-c348-4c28-9cf1-7ee9ed9c2ba2.png)
 
