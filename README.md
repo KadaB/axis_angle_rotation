@@ -11,18 +11,21 @@ The tex file is written with pytex so it's a bit annoying to compile. That is wh
 The 3D rotation formula is similar to that used in [Ravi Ramamoorthi's course](https://www.youtube.com/watch?v=LazSPnaoJ_Q&t=482s) (matrix part). Also [Mathomas videos](https://youtu.be/q-ESzg03mQc) are a nice resource on this topic.
 
 ## possible implementation
-An implementation is python and numpy could look like:
+An (inefficient) implementation in python and numpy could look like:
 
     import numpy as np
     # input: normalized rotation axis vector n, angle theta (radians)
     # output: 3x3 rotation matrix
     def axis_angle_rotation(n, theta):
-        def crossProdMat(x, y, z):
-            return np.array( [ [0, -z, y], [z, 0, -x], [-y, x, 0] ] )
+        def skew(n): # get skew symmetric matrix by transformation of base vectors
+            nxe1 = np.cross(n, (1, 0, 0))   # n x e1
+            nxe2 = np.cross(n, (0, 1, 0))   # n x e2
+            nxe3 = np.cross(n, (0, 0, 1))   # n x e3
+            return np.column_stack([nxe1, nxe2, nxe3])  # define matrix by transformed column vectors
 
-        P = np.outer(n, n)
+        P = np.outer(n, n)  # outer product of n with n (nn^T) is a matrix
         I = np.identity(3)
-        K = crossProdMat(*n)
+        K = skew(n)
         return P + np.cos(theta) * (I - P) + np.sin(theta) * K
 
 ## Derivation
