@@ -27,5 +27,4 @@ An (inefficient) implementation in python and numpy could look like:
         return P + np.cos(theta) * (I - P) + np.sin(theta) * K
 
 ## Derivation
-![axis_angle](https://user-images.githubusercontent.com/22398803/149604737-1b46491a-c348-4c28-9cf1-7ee9ed9c2ba2.png)
-
+![axis_angle](https://github.com/KadaB/axis_angle_rotation/blob/main/axis_angle.png)
