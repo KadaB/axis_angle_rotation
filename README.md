@@ -28,3 +28,5 @@ An (inefficient) implementation in python and numpy could look like:
 
 ## Derivation
 ![axis_angle](https://github.com/KadaB/axis_angle_rotation/blob/main/axis_angle.png)
+
+Hope it helps :-)
