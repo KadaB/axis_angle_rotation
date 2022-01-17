@@ -17,11 +17,9 @@ An (inefficient) implementation in python and numpy could look like:
     # input: normalized rotation axis vector n, angle theta (radians)
     # output: 3x3 rotation matrix
     def axis_angle_rotation(n, theta):
-        def skew(n): # get skew symmetric matrix by transformation of base vectors
-            nxe1 = np.cross(n, (1, 0, 0))   # n x e1
-            nxe2 = np.cross(n, (0, 1, 0))   # n x e2
-            nxe3 = np.cross(n, (0, 0, 1))   # n x e3
-            return np.column_stack([nxe1, nxe2, nxe3])  # define matrix by transformed column vectors
+        def skew(n): # skew symmetric matrix
+            e1, e2, e3 = (1, 0, 0), (0, 1, 0), (0, 0, 1) # standard base vectors
+            return np.column_stack([ np.cross(n, e1), np.cross(n, e2), np.cross(n, e3) ])
 
         P = np.outer(n, n)  # outer product of n with n (nn^T) is a matrix
         I = np.identity(3)
